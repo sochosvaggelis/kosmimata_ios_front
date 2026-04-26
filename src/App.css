@@ -1,0 +1,233 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Layout */
+.layout {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 28px 32px 56px;
+  min-width: 0;
+}
+
+/* Products header bar */
+.products-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, transparent 0%, rgba(240, 247, 255, 0.3) 100%);
+}
+
+.products-header-left {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.products-title {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-dark);
+  letter-spacing: 0.04em;
+}
+
+.products-count {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.products-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-select {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 12.5px;
+  color: var(--text-mid);
+  background: var(--white);
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.sort-select:focus {
+  border-color: var(--blue-400);
+}
+
+.view-toggle {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.view-toggle button {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border: none;
+  color: var(--text-light);
+  transition: background 0.12s, color 0.12s;
+}
+
+.view-toggle button:hover {
+  background: var(--blue-50);
+  color: var(--text-dark);
+}
+
+.view-toggle button.active {
+  background: var(--blue-500);
+  color: white;
+}
+
+/* Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.products-grid.list-view {
+  grid-template-columns: 1fr;
+}
+
+.products-grid.list-view .product-card {
+  flex-direction: row;
+}
+
+.products-grid.list-view .card-image-wrap {
+  width: 160px;
+  flex-shrink: 0;
+  aspect-ratio: unset;
+  height: 160px;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.empty-state p {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+/* Footer */
+.footer {
+  background: var(--text-dark);
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: auto;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding: 48px 40px 36px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-brand .footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  letter-spacing: 0.22em;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.footer-heading {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 4px;
+}
+
+.footer-links a,
+.footer-links span {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.15s;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  padding: 16px 40px;
+}
+
+.footer-bottom p {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding: 20px 16px 40px;
+  }
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+}

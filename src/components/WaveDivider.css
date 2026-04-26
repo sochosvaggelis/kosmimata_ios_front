@@ -1,0 +1,10 @@
+.wave-divider {
+  line-height: 0;
+  background: var(--off-white);
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
