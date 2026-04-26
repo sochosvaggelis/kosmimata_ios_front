@@ -219,15 +219,25 @@
 
 @media (max-width: 640px) {
   .main {
-    padding: 20px 16px 40px;
+    padding: 16px 12px 40px;
   }
   .products-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
   .footer-inner {
-    grid-template-columns: 1fr;
-    padding: 32px 24px;
+    grid-template-columns: 1fr 1fr;
+    padding: 32px 20px;
     gap: 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .main {
+    padding: 12px 8px 32px;
   }
 }

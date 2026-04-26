@@ -209,12 +209,3 @@
   transform: scaleX(1);
 }
 
-@media (max-width: 900px) {
-  .menu-btn {
-    display: flex;
-  }
-  .header-logo {
-    position: static;
-    transform: none;
-  }
-}

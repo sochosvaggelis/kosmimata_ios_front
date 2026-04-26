@@ -43,7 +43,6 @@ export default function App() {
 
   const handleSelectCategory = (id) => {
     setSelectedCategory(id)
-    if (window.innerWidth <= 900) setSidebarOpen(false)
   }
 
   return (
