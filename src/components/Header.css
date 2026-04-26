@@ -15,11 +15,12 @@
   justify-content: space-between;
   padding: 18px 28px;
   gap: 16px;
+  position: relative;
 }
 
-/* Hamburger */
+/* Hamburger — visible only on mobile */
 .menu-btn {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
@@ -57,12 +58,15 @@
   transform: translateY(-6.5px) rotate(-45deg);
 }
 
-/* Logo */
+/* Logo — centered absolutely on desktop */
 .header-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .logo-main {
@@ -203,4 +207,14 @@
 .nav-link.active::after,
 .nav-link:hover::after {
   transform: scaleX(1);
+}
+
+@media (max-width: 900px) {
+  .menu-btn {
+    display: flex;
+  }
+  .header-logo {
+    position: static;
+    transform: none;
+  }
 }

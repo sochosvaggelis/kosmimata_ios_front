@@ -61,6 +61,7 @@ export default function App() {
           isOpen={sidebarOpen}
           selectedCategory={selectedCategory}
           onSelectCategory={handleSelectCategory}
+          onToggle={() => setSidebarOpen(o => !o)}
         />
 
         <main className="main">
