@@ -16,18 +16,9 @@ export default function Sidebar({ isOpen, selectedCategory, onSelectCategory, on
         className={`sidebar-overlay ${isOpen ? 'visible' : ''}`}
         onClick={() => onSelectCategory(selectedCategory)}
       />
-      <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
-        <div className="sidebar-header">
-          <button
-            className="sidebar-tab-btn"
-            onClick={onToggle}
-            aria-label={isOpen ? 'Κλείσιμο φίλτρων' : 'Άνοιγμα φίλτρων'}
-          >
-            <PanelChevron isOpen={isOpen} />
-          </button>
-        </div>
 
-        <div className="sidebar-content">
+      <div className={`sidebar-wrapper ${isOpen ? 'open' : ''}`}>
+        <aside className="sidebar">
           <div className="sidebar-section">
             <p className="sidebar-label">Κατηγορίες</p>
 
@@ -115,15 +106,23 @@ export default function Sidebar({ isOpen, selectedCategory, onSelectCategory, on
               ))}
             </div>
           </div>
-        </div>
-      </aside>
+        </aside>
+
+        <button
+          className="sidebar-tab-btn"
+          onClick={onToggle}
+          aria-label={isOpen ? 'Κλείσιμο φίλτρων' : 'Άνοιγμα φίλτρων'}
+        >
+          <PanelChevron isOpen={isOpen} />
+        </button>
+      </div>
     </>
   )
 }
 
 function PanelChevron({ isOpen }) {
   return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
       {isOpen
         ? <polyline points="15 18 9 12 15 6" />
         : <polyline points="9 18 15 12 9 6" />

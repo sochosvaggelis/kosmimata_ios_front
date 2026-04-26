@@ -18,108 +18,96 @@
   }
 }
 
-.sidebar {
-  width: 240px;
-  flex-shrink: 0;
-  background: var(--white);
-  border-right: 1px solid var(--border);
-  height: calc(100vh - 97px);
+/* ── Wrapper: handles sticky + flex row (sidebar + tab) ── */
+.sidebar-wrapper {
   position: sticky;
   top: 97px;
-  overflow: hidden;
-  transition: width 0.28s ease;
+  height: calc(100vh - 97px);
   display: flex;
-  flex-direction: column;
-}
-
-.sidebar:not(.open) {
-  width: 36px;
-}
-
-/* Tab button strip at the top */
-.sidebar-header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10px 6px;
-  flex-shrink: 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.sidebar-tab-btn {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  color: var(--text-light);
-  cursor: pointer;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  align-items: flex-start;
   flex-shrink: 0;
 }
 
-.sidebar-tab-btn:hover {
-  background: var(--blue-50);
-  color: var(--blue-500);
-  border-color: var(--blue-200);
-}
-
-/* Scrollable content area */
-.sidebar-content {
-  flex: 1;
+/* ── Sidebar panel ── */
+.sidebar {
+  width: 240px;
+  height: 100%;
+  background: var(--white);
+  border-right: 1px solid var(--border);
   overflow-y: auto;
   overflow-x: hidden;
-  opacity: 1;
-  transition: opacity 0.18s ease;
   scrollbar-width: thin;
   scrollbar-color: var(--blue-200) transparent;
+  transition: margin-left 0.28s ease;
+  flex-shrink: 0;
 }
 
-.sidebar-content::-webkit-scrollbar {
+.sidebar-wrapper:not(.open) .sidebar {
+  margin-left: -240px;
+  border-right: none;
+}
+
+.sidebar::-webkit-scrollbar {
   width: 3px;
 }
-.sidebar-content::-webkit-scrollbar-thumb {
+.sidebar::-webkit-scrollbar-thumb {
   background: var(--blue-200);
   border-radius: 2px;
 }
 
-.sidebar:not(.open) .sidebar-content {
-  opacity: 0;
-  pointer-events: none;
+/* ── The "ear" tab that protrudes from the sidebar edge ── */
+.sidebar-tab-btn {
+  align-self: flex-start;
+  margin-top: 72px;
+  width: 22px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue-400);
+  border: 1px solid var(--blue-500);
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
 }
 
+.sidebar-tab-btn:hover {
+  background: var(--blue-500);
+  color: #fff;
+}
+
+/* ── Mobile: wrapper slides in, tab hidden ── */
 @media (max-width: 900px) {
-  .sidebar {
+  .sidebar-wrapper {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     z-index: 99;
-    width: 240px;
     transform: translateX(-100%);
     transition: transform 0.25s ease;
-    box-shadow: var(--shadow-lg);
-    pointer-events: auto;
   }
-  .sidebar:not(.open) {
+  .sidebar-wrapper.open {
+    transform: translateX(0);
+  }
+  .sidebar-wrapper:not(.open) .sidebar {
     width: 240px;
     border-right: 1px solid var(--border);
   }
-  .sidebar.open {
-    transform: translateX(0);
+  .sidebar {
+    width: 240px;
+    height: 100%;
+    box-shadow: var(--shadow-lg);
   }
-  .sidebar-header {
+  .sidebar-tab-btn {
     display: none;
-  }
-  .sidebar-content {
-    opacity: 1;
-    pointer-events: auto;
   }
 }
 
+/* ── Sidebar sections ── */
 .sidebar-section {
   padding: 20px 20px 16px;
 }
