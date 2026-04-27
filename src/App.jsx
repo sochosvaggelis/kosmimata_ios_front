@@ -15,7 +15,7 @@ const SORT_OPTIONS = [
 ]
 
 export default function App() {
-  const [sidebarOpen, setSidebarOpen] = useState(true)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [sort, setSort] = useState('default')
   const [cartItems, setCartItems] = useState([])
