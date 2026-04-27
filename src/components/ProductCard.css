@@ -197,3 +197,31 @@
   border-color: #86efac;
   color: #16a34a;
 }
+
+@media (max-width: 640px) {
+  .card-image-wrap {
+    aspect-ratio: 1 / 1;
+  }
+
+  .card-body {
+    padding: 12px 14px 8px;
+    gap: 5px;
+  }
+
+  .card-name {
+    font-size: 15px;
+  }
+
+  .card-description {
+    font-size: 12px;
+  }
+
+  .card-price {
+    font-size: 18px;
+  }
+
+  .add-btn {
+    padding: 10px;
+    font-size: 10.5px;
+  }
+}
