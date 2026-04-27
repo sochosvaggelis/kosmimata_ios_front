@@ -6,19 +6,15 @@
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 2px 24px rgba(14, 165, 233, 0.06);
-  transition: transform 0.3s ease;
+  box-shadow: 0 1px 0 rgba(14, 165, 233, 0.06);
+  transition: box-shadow 0.4s ease;
+}
+
+.header--compact {
+  box-shadow: 0 4px 24px rgba(14, 165, 233, 0.1), 0 1px 0 rgba(14, 165, 233, 0.06);
 }
 
 
-.header--compact .header-main {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.header--compact .logo-sub {
-  display: none;
-}
 
 .header-main {
   display: flex;
@@ -27,7 +23,6 @@
   padding: 18px 28px;
   gap: 16px;
   position: relative;
-  transition: padding 0.28s ease;
 }
 
 /* Hamburger — visible only on mobile */
@@ -184,11 +179,13 @@
   overflow: hidden;
   scrollbar-width: none;
   max-height: 44px;
-  transition: max-height 0.3s ease, border-top-color 0.3s ease;
+  opacity: 1;
+  transition: max-height 0.28s ease, opacity 0.22s ease, border-color 0.28s ease;
 }
 
 .header--compact .header-nav {
   max-height: 0;
+  opacity: 0;
   border-top-color: transparent;
 }
 
