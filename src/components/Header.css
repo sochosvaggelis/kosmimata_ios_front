@@ -232,5 +232,19 @@
   .menu-btn {
     display: flex;
   }
+
+  .header-main {
+    padding: 12px 16px;
+  }
+
+  .logo-main {
+    font-size: 16px;
+    letter-spacing: 0.14em;
+  }
+
+  .logo-sub {
+    font-size: 8.5px;
+    letter-spacing: 0.12em;
+  }
 }
 

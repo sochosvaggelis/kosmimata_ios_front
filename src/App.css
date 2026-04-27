@@ -21,11 +21,12 @@
 /* Products header bar */
 .products-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  row-gap: 6px;
+  column-gap: 8px;
   margin-bottom: 28px;
-  padding-bottom: 18px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--border);
   background: linear-gradient(180deg, transparent 0%, rgba(240, 247, 255, 0.3) 100%);
 }
@@ -33,30 +34,32 @@
 .products-header-left {
   display: flex;
   align-items: baseline;
-  gap: 10px;
+  gap: 8px;
+  flex: 1 0 100%;
   min-width: 0;
-  flex-shrink: 1;
 }
 
 .products-title {
-  font-size: clamp(15px, 3.5vw, 22px);
+  font-size: 15px;
   font-weight: 400;
   color: var(--text-dark);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .products-count {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-light);
+  white-space: nowrap;
 }
 
 .products-header-right {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-left: auto;
 }
 
 .sort-select {

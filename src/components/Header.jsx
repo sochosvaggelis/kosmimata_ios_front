@@ -11,11 +11,11 @@ export default function Header({ cartCount, onMenuToggle, sidebarOpen }) {
     const onScroll = () => {
       const currentY = window.scrollY
 
-      if (currentY < 60) {
-        setHeaderState('full')
-      } else {
-        setHeaderState('compact')
-      }
+      setHeaderState(prev => {
+        if (currentY < 40) return 'full'
+        if (currentY > 90) return 'compact'
+        return prev
+      })
 
       lastScrollY.current = currentY
     }
