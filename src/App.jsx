@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import Header from './components/Header'
 import LocationStrip from './components/LocationStrip'
 import Sidebar from './components/Sidebar'
@@ -20,6 +20,17 @@ export default function App() {
   const [sort, setSort] = useState('default')
   const [cartItems, setCartItems] = useState([])
   const [viewMode, setViewMode] = useState('grid')
+  const [headerCompact, setHeaderCompact] = useState(false)
+  const sentinelRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setHeaderCompact(!entry.isIntersecting),
+      { threshold: 0 }
+    )
+    if (sentinelRef.current) observer.observe(sentinelRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   const categoryLabel = selectedCategory
     ? categories.find(c => c.id === selectedCategory)?.label
@@ -47,10 +58,12 @@ export default function App() {
 
   return (
     <div className="app">
+      <div ref={sentinelRef} aria-hidden="true" />
       <Header
         cartCount={cartItems.length}
         onMenuToggle={() => setSidebarOpen(o => !o)}
         sidebarOpen={sidebarOpen}
+        compact={headerCompact}
       />
 
       <LocationStrip />
