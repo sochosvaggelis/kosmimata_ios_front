@@ -7,6 +7,17 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 2px 24px rgba(14, 165, 233, 0.06);
+  transition: transform 0.3s ease;
+}
+
+
+.header--compact .header-main {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header--compact .logo-sub {
+  display: none;
 }
 
 .header-main {
@@ -16,6 +27,7 @@
   padding: 18px 28px;
   gap: 16px;
   position: relative;
+  transition: padding 0.28s ease;
 }
 
 /* Hamburger — visible only on mobile */
@@ -169,8 +181,15 @@
   align-items: center;
   padding: 0 28px;
   border-top: 1px solid var(--border);
-  overflow-x: auto;
+  overflow: hidden;
   scrollbar-width: none;
+  max-height: 44px;
+  transition: max-height 0.3s ease, border-top-color 0.3s ease;
+}
+
+.header--compact .header-nav {
+  max-height: 0;
+  border-top-color: transparent;
 }
 
 .header-nav::-webkit-scrollbar {
@@ -207,5 +226,11 @@
 .nav-link.active::after,
 .nav-link:hover::after {
   transform: scaleX(1);
+}
+
+@media (max-width: 640px) {
+  .menu-btn {
+    display: flex;
+  }
 }
 

@@ -1,12 +1,31 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './Header.css'
 
 export default function Header({ cartCount, onMenuToggle, sidebarOpen }) {
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchValue, setSearchValue] = useState('')
+  const [headerState, setHeaderState] = useState('full') // 'full' | 'compact' | 'hidden'
+  const lastScrollY = useRef(0)
+
+  useEffect(() => {
+    const onScroll = () => {
+      const currentY = window.scrollY
+
+      if (currentY < 60) {
+        setHeaderState('full')
+      } else {
+        setHeaderState('compact')
+      }
+
+      lastScrollY.current = currentY
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
-    <header className="header">
+    <header className={`header header--${headerState}`}>
       <div className="header-main">
         <button
           className={`menu-btn ${sidebarOpen ? 'active' : ''}`}

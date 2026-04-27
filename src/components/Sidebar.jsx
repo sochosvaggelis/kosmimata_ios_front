@@ -14,11 +14,15 @@ export default function Sidebar({ isOpen, selectedCategory, onSelectCategory, on
     <>
       <div
         className={`sidebar-overlay ${isOpen ? 'visible' : ''}`}
-        onClick={() => onSelectCategory(selectedCategory)}
+        onClick={onToggle}
       />
 
       <div className={`sidebar-wrapper ${isOpen ? 'open' : ''}`}>
         <aside className="sidebar">
+          <div className="sidebar-mobile-header">
+            <span className="sidebar-mobile-title">Φίλτρα</span>
+            <button className="sidebar-mobile-close" onClick={onToggle} aria-label="Κλείσιμο">✕</button>
+          </div>
           <div className="sidebar-section">
             <p className="sidebar-label">Κατηγορίες</p>
 

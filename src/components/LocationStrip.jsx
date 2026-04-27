@@ -11,8 +11,6 @@ export default function LocationStrip() {
         <span className="location-dot" />
         <span className="location-item">Χειροποίητα κοσμήματα</span>
         <span className="location-dot" />
-        <span className="location-item">Από το 2018</span>
-        <span className="location-dot" />
         <span className="location-item">
           <WaveIcon />
           Αιγαίο Πέλαγος
