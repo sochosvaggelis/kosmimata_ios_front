@@ -1,3 +1,5 @@
+import placeholder from './placeholder.png';
+
 export const categories = [
   {
     id: 'rings',
@@ -31,20 +33,20 @@ export const categories = [
   },
 ];
 
-const placeholderImages = [
-  'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=400&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=400&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=400&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=400&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?w=400&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=400&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1561828995-aa79a2db86dd?w=400&h=400&fit=crop',
-];
+const placeholderImages = new Array(12).fill(placeholder);
+  // 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=400&fit=crop',
+  // 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=400&h=400&fit=crop',
+  // 'https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=400&h=400&fit=crop',
+  // 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=400&fit=crop',
+  // 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=400&fit=crop',
+  // 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=400&h=400&fit=crop',
+  // 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop',
+  // 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=400&h=400&fit=crop',
+  // 'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400&h=400&fit=crop',
+  // 'https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?w=400&h=400&fit=crop',
+  // 'https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=400&h=400&fit=crop',
+  // 'https://images.unsplash.com/photo-1561828995-aa79a2db86dd?w=400&h=400&fit=crop',
+// ];
 
 export const products = [
   {

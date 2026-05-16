@@ -242,6 +242,17 @@
   color: var(--text-dark);
 }
 
+@media (min-width: 1025px) {
+  .sidebar-tab-btn {
+    display: none;
+  }
+
+  .sidebar-wrapper:not(.open) .sidebar {
+    margin-left: 0;
+    border-right: 1px solid var(--border);
+  }
+}
+
 @media (max-width: 640px) {
   .sidebar-overlay {
     display: block;

@@ -37,7 +37,7 @@
   position: relative;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  background: var(--blue-50);
+  background: var(--white);
 }
 
 .card-image {

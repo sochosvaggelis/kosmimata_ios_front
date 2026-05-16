@@ -228,6 +228,18 @@
 @media (max-width: 640px) {
   .menu-btn {
     display: flex;
+    background: var(--blue-50);
+    border: 1px solid var(--blue-200);
+    border-radius: 8px;
+  }
+
+  .menu-btn span {
+    background: var(--text-dark);
+    height: 2px;
+  }
+
+  .menu-btn:hover {
+    background: var(--blue-100);
   }
 
   .header-main {
